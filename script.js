@@ -105,8 +105,31 @@ class UsingAsyncAndAwaitWithTheAlarmApi {
   }
 }
 
-// const implementingAnAlarmApi = new ImplementingAnAlarmAPI();
+class RunClassesSynchronously {
+  constructor() {
+    this.asyncMethods();
+  }
 
-// const usingTheAlarmApi = new UsingTheAlarmApi();
+  async asyncMethods() {
+    await this.implementingAnAlarmAPIMethod();
+    await this.usingTheAlarmApiMethod();
+    this.usingAsyncAndAwaitWithTheAlarmApiMethod();
+  }
 
-const usingAsyncAndAwaitWithTheAlarmApi = new UsingAsyncAndAwaitWithTheAlarmApi();
+  async implementingAnAlarmAPIMethod() {
+    const implementingAnAlarmApi = new ImplementingAnAlarmAPI();
+
+  }
+
+  async usingTheAlarmApiMethod() {
+    const usingTheAlarmApi = new UsingTheAlarmApi();
+
+  }
+
+  async usingAsyncAndAwaitWithTheAlarmApiMethod() {
+    const usingAsyncAndAwaitWithTheAlarmApi = new UsingAsyncAndAwaitWithTheAlarmApi();
+
+  }
+}
+
+const runClassesSynchronously = new RunClassesSynchronously();
